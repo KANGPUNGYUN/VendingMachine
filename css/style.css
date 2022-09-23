@@ -66,8 +66,9 @@ section #purchased {
 }
 
 .vending-cola-list-item:checked + label,
+.vending-cola-list-item input:focus + label,
 .vending-cola-list-item + label:hover {
-    border: var(--mainColor) solid 3px;
+    outline: var(--mainColor) solid 3px;
     box-shadow: none;
 }
 

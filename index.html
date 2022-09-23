@@ -65,5 +65,17 @@
 </body>
 </html>
 
-<!-- 1. 형제 요소에 영향을 주지 않고도 border를 줄 수 있는 방법이 있는가? -->
-<!-- 2. 왜 input checkbox나 label에 focus가 되지 않는가? -->
+<!-- 1. 형제 요소에 물리적인 영향을 주지 않고도 (바깥으로 커지는)border를 줄 수 있는 방법이 있는가? -->
+<!-- 
+    box-shadow랑 outline은 border랑 달리 물리적인 공간을 차지 하지 않는다.
+-->
+
+<!-- 2. 왜 label은 focus가 되지 않는가? -->
+<!-- 
+    label은 focusable한 form element가 아니다.(label은 HTML Label Element)
+    focus가 가능한 html element에는 명확한 정보는 없지만 표준에서 제공하는 focus가 가능한 html element는 DOM level 2 HTML 중 HTMLInputElement, HTMLSelectElement, HTMLTextAreaElement, HTMLAnchorElement이 있으며, 추가로 HTMLButtonElement와 HTMLAreaElement도 focus가 가능하다.
+
+    input:focus + label 이런 방법으로 focus된 부분을 컨트롤할 수 있다고는 하나 이번 프로젝트에선 버튼만 focus가 된다. 이유가 뭘까?
+
+    표준서: https://www.w3.org/TR/DOM-Level-2-HTML/html.html
+-->
