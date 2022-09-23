@@ -1,0 +1,36 @@
+body {
+    background-color: #EAE8FE;
+}
+
+.wrapper{
+    width: 748px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.logo {
+    width: 386px;
+    height: 180px;
+}
+
+section #vendingMachine,
+section #budget,
+section #purchased {
+    width: 360px;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+main {
+    margin-top: 67px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 28px;
+}
+
+main section:nth-child(1){
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
