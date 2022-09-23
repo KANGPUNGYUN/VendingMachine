@@ -1,5 +1,5 @@
 body {
-    background-color: #EAE8FE;
+    background-color: var(--subColor);
 }
 
 .wrapper{
@@ -13,11 +13,11 @@ body {
     height: 180px;
 }
 
-section #vendingMachine,
+section #vending,
 section #budget,
 section #purchased {
     width: 360px;
-    background-color: #FFFFFF;
+    background-color: var(--white);
     box-sizing: border-box;
 }
 
@@ -25,12 +25,76 @@ main {
     margin-top: 67px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px 28px;
+    grid-gap: 20px 28px;
 }
 
-main section:nth-child(1){
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
+main #vending {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    padding: 31px 27px 28px;
+}
+
+section #budget {
+    padding: 9px 27px;
+}
+
+section #purchased {
+    padding: 25px 27px;
+}
+
+.vending-cola-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 12px;
+}
+
+.vending-cola-list-item {
+    display: none;
+}
+
+.vending-cola-list-item + label{
+    padding: 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 130px;
+    width: 94px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.vending-cola-list-item:checked + label,
+.vending-cola-list-item + label:hover {
+    border: var(--mainColor) solid 3px;
+    box-shadow: none;
+}
+
+.vending-cola-list-item + label img {
+    margin-top: 2px;
+    width: 36px;
+    height: 65px;
+}
+
+.vending-cola-list-item + label p {
+    font-family: 'Noto Sans KR';
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 9px;
+    letter-spacing: 0em;
+    margin-top: 6px;
+}
+
+.vending-cola-list-item + label button {
+    background-color: var(--mainColor);
+    border-radius: 50px;
+    color: var(--white);
+    font-family: 'Noto Sans KR';
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 12px;
+    letter-spacing: 0em;
+    padding: 5px 16px 5px 15px;
+    margin-top: 7px;
 }

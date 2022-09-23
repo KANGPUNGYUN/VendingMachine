@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <title>밴딩머신</title>
@@ -11,14 +13,57 @@
 <body>
     <section class="wrapper">
         <header>
-            <h1 class="blind">Coca Cola</h1>
+            <h1 class="blind">Cola Cola</h1>
             <img class="logo" src="images/logo.png" alt="Cola Cola 밴딩머신 로고">
         </header>
         <main>
-            <section id="vendingMachine">A</section>
+            <section id="vending">
+                <form class="vending-cola-list">
+                    <input class="vending-cola-list-item" type="checkbox" id="original">
+                    <label for="original">
+                        <img src="images/cola/original_cola.png" alt="오리지널 콜라">
+                        <p>Original_Cola</p>
+                        <button>1000원</button>
+                    </label>
+                    <input class="vending-cola-list-item" type="checkbox" id="violet">
+                    <label for="violet">
+                        <img src="images/cola/violet_cola.png" alt="바이올렛 콜라">
+                        <p>Violet_Cola</p>
+                        <button>1000원</button>
+                    </label>
+                    
+                    <input class="vending-cola-list-item" type="checkbox" id="yellow">
+                    <label for="yellow">
+                        <img src="images/cola/yellow_cola.png" alt="엘로우 콜라">
+                        <p>Yellow_Cola</p>
+                        <button>1000원</button>
+                    </label>
+                    <input class="vending-cola-list-item" type="checkbox" id="cool">
+                    <label for="cool">
+                        <img src="images/cola/cool_cola.png" alt="쿨 콜라">
+                        <p>Cool_Cola</p>
+                        <button>1000원</button>
+                    </label>
+                    <input class="vending-cola-list-item" type="checkbox" id="green">
+                    <label for="green">
+                        <img src="images/cola/green_cola.png" alt="그린 콜라">
+                        <p>Green_Cola</p>
+                        <button>1000원</button>
+                    </label>
+                    <input class="vending-cola-list-item" type="checkbox" id="orange">
+                    <label for="orange">
+                        <img src="images/cola/orange_cola.png" alt="오렌지 콜라">
+                        <p>Orange_Cola</p>
+                        <button>1000원</button>
+                    </label>
+                </form>
+            </section>
             <section id="budget">B</section>
             <section id="purchased">C</section>
         </main>
     </section>
 </body>
 </html>
+
+<!-- 1. 형제 요소에 영향을 주지 않고도 border를 줄 수 있는 방법이 있는가? -->
+<!-- 2. 왜 input checkbox나 label에 focus가 되지 않는가? -->

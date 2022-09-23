@@ -1,3 +1,13 @@
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+:root {
+	--mainColor: #6327FE;
+	--subColor: #EAE8FE;
+	--white: #FFFFFF;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -55,4 +65,12 @@ table {
 	height: 1px;
 	margin: -1px;
 	overflow: hidden;
+}
+
+ul li{
+	list-style: none;
+}
+
+button{
+	border: 0;
 }
