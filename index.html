@@ -18,48 +18,91 @@
         </header>
         <main>
             <section id="vending">
-                <form class="vending-cola-list">
-                    <input class="vending-cola-list-item" type="checkbox" id="original">
-                    <label for="original">
+                <article class="vending-cola-list">
+                    <button class="vending-cola-list-item" id="original">
                         <img src="images/cola/original_cola.png" alt="오리지널 콜라">
                         <p>Original_Cola</p>
-                        <button>1000원</button>
-                    </label>
-                    <input class="vending-cola-list-item" type="checkbox" id="violet">
-                    <label for="violet">
+                        <span>1000</span>
+                    </button>
+                    <button class="vending-cola-list-item" id="violet" disabled>
                         <img src="images/cola/violet_cola.png" alt="바이올렛 콜라">
                         <p>Violet_Cola</p>
-                        <button>1000원</button>
-                    </label>
-                    
-                    <input class="vending-cola-list-item" type="checkbox" id="yellow">
-                    <label for="yellow">
+                        <span>1000</span>
+                    </button>
+                    <button class="vending-cola-list-item" id="yellow">
                         <img src="images/cola/yellow_cola.png" alt="엘로우 콜라">
                         <p>Yellow_Cola</p>
-                        <button>1000원</button>
-                    </label>
-                    <input class="vending-cola-list-item" type="checkbox" id="cool">
-                    <label for="cool">
+                        <span>1000</span>
+                    </button>
+                    <button class="vending-cola-list-item" id="cool">
                         <img src="images/cola/cool_cola.png" alt="쿨 콜라">
                         <p>Cool_Cola</p>
-                        <button>1000원</button>
-                    </label>
-                    <input class="vending-cola-list-item" type="checkbox" id="green">
-                    <label for="green">
+                        <span>1000</span>
+                    </button>
+                    <button class="vending-cola-list-item" id="green">
                         <img src="images/cola/green_cola.png" alt="그린 콜라">
                         <p>Green_Cola</p>
-                        <button>1000원</button>
-                    </label>
-                    <input class="vending-cola-list-item" type="checkbox" id="orange">
-                    <label for="orange">
+                        <span>1000</span>
+                    </button>
+                    <button class="vending-cola-list-item" id="orange">
                         <img src="images/cola/orange_cola.png" alt="오렌지 콜라">
                         <p>Orange_Cola</p>
-                        <button>1000원</button>
-                    </label>
-                </form>
+                        <span>1000</span>
+                    </button>
+                </article>
+                <article class="add-to-cart">
+                    <input type="text" id="balance" value="1,000">
+                    <input type="button" id="change" value="거스름돈 반환">
+                    <input type="text" id="deposit-amount" placeholder="입금액 입력">
+                    <input type="button" id="deposit" value="입금">
+                    <article id="add-to-cart-list">
+                        <ul class="adding-cola-list">
+                            <li class="adding-cola-item">
+                                <img src="images/cola/original_cola.png" alt="오리지널 콜라">
+                                <p>Original_Cola</p>
+                                <input class="count" type="text" id="adding_original_count" value="1">
+                            </li>
+                            <li class="adding-cola-item">
+                                <img src="images/cola/green_cola.png" alt="오리지널 콜라">
+                                <p>Green_Cola</p>
+                                <input class="count" type="text" id="adding_green_count" value="2">
+                            </li>
+                        </ul>
+                    </article>
+                    <input type="button" id="purchase" value="획득">
+                </article>
             </section>
-            <section id="budget">B</section>
-            <section id="purchased">C</section>
+            <section id="budget">
+                <input type="text" id="budget-amount" value="25,000">
+            </section>
+            <section id="purchased">
+                <h2 class="purchased-cola">획득한 음료</h2>
+                <article id="purchased-list">
+                    <ul class="purchased-cola-list">
+                        <li class="purchased-cola-item">
+                            <img src="images/cola/original_cola.png" alt="오리지널 콜라">
+                            <p>Original_Cola</p>
+                            <input class="count" type="text" id="purchased_original_count" value="1">
+                        </li>
+                        <li class="purchased-cola-item">
+                            <img src="images/cola/green_cola.png" alt="오리지널 콜라">
+                            <p>Green_Cola</p>
+                            <input class="count" type="text" id="purchased_green_count" value="2">
+                        </li>
+                        <li class="purchased-cola-item">
+                            <img src="images/cola/orange_cola.png" alt="오리지널 콜라">
+                            <p>Orange_Cola</p>
+                            <input class="count" type="text" id="purchased_orange_count" value="1">
+                        </li>
+                        <li class="purchased-cola-item">
+                            <img src="images/cola/violet_cola.png" alt="오리지널 콜라">
+                            <p>Violet_Cola</p>
+                            <input class="count" type="text" id="purchased_violet_count" value="5">
+                        </li>
+                    </ul>
+                </article>
+                <p id="total-amount">9,000</p>
+            </section>
         </main>
     </section>
 </body>
@@ -78,4 +121,9 @@
     input:focus + label 이런 방법으로 focus된 부분을 컨트롤할 수 있다고는 하나 이번 프로젝트에선 버튼만 focus가 된다. 이유가 뭘까?
 
     표준서: https://www.w3.org/TR/DOM-Level-2-HTML/html.html
+-->
+
+<!-- 3. overflow: scroll의 스크롤 부분에 배경색을 바꾸는 방법은? -->
+<!-- 
+    ::-webkit-scrollbar이라는 CSS 속성을 사용하기 
 -->

@@ -22,9 +22,10 @@ section #purchased {
 }
 
 main {
-    margin-top: 67px;
+    margin: 67px 0 171px 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50px;
     grid-gap: 20px 28px;
 }
 
@@ -49,11 +50,8 @@ section #purchased {
 }
 
 .vending-cola-list-item {
-    display: none;
-}
-
-.vending-cola-list-item + label{
     padding: 9px;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,22 +61,46 @@ section #purchased {
     border-radius: 10px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
     cursor: pointer;
+    background-color: var(--white);
 }
 
-.vending-cola-list-item:checked + label,
-.vending-cola-list-item input:focus + label,
-.vending-cola-list-item + label:hover {
+.vending-cola-list-item:hover,
+.vending-cola-list-item:active,
+#deposit:hover,
+#change:hover,
+#purchase:hover
+ {
     outline: var(--mainColor) solid 3px;
     box-shadow: none;
 }
 
-.vending-cola-list-item + label img {
+.vending-cola-list-item:disabled{
+    color: black;
+}
+
+.vending-cola-list-item:disabled::after{
+    content: "품절";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url("../images/sold_out.png");
+    background-position: 50% 50%;
+    background-size: 57.51px 44.85px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+.vending-cola-list-item:disabled:hover{
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.vending-cola-list-item img {
     margin-top: 2px;
     width: 36px;
     height: 65px;
 }
 
-.vending-cola-list-item + label p {
+.vending-cola-list-item p {
     font-family: 'Noto Sans KR';
     font-size: 9px;
     font-weight: 500;
@@ -87,7 +109,7 @@ section #purchased {
     margin-top: 6px;
 }
 
-.vending-cola-list-item + label button {
+.vending-cola-list-item span {
     background-color: var(--mainColor);
     border-radius: 50px;
     color: var(--white);
@@ -97,5 +119,208 @@ section #purchased {
     line-height: 12px;
     letter-spacing: 0em;
     padding: 5px 16px 5px 15px;
-    margin-top: 7px;
+    margin-top: auto;
+}
+
+.vending-cola-list-item span::after {
+    content: "원";
+}
+
+.add-to-cart {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 11px 12px;
+}
+
+#balance, #change, #deposit-amount, #deposit, .adding-cola-list, #purchase, #add-to-cart-list, #purchased-list{
+    box-sizing: border-box;
+}
+
+#balance {
+    width: 200px;
+    height: 32px;
+    background-color: var(--subColor);
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+#change {
+    height: 32px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    background-color: var(--white);
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+#deposit-amount {
+    width: 200px;
+    height: 32px;
+    border-radius: 5px;
+    outline: 1px solid var(--grey);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px;
+    line-height: 19px;
+}
+
+#deposit-amount::placeholder,
+#deposit-amount:-ms-input-placeholder,
+#deposit-amount::-ms-input-placeholder {
+    color: var(--grey);
+}
+
+#deposit {
+    height: 32px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    background-color: var(--white);
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+#add-to-cart-list {
+    width: 200px;
+    height: 106px;
+    overflow-x: auto;
+    border-radius: 5px;
+    background-color: var(--subColor);
+    padding: 12px;
+}
+/* scrollbar CSS */
+/* width */
+#add-to-cart-list::-webkit-scrollbar, #purchased-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Track */
+#add-to-cart-list::-webkit-scrollbar-track, #purchased-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+#add-to-cart-list::-webkit-scrollbar-thumb, #purchased-list::-webkit-scrollbar-thumb{
+    
+    background: white;
+    border: 4px solid transparent;
+    border-radius: 50px;
+    background-clip: padding-box;
+
+}
+
+.adding-cola-list, .purchased-cola-list{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.adding-cola-item{
+    background-color: var(--white);
+    width: 170px;
+    height: 46px;
+    border-radius: 5px;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.purchased-cola-item{
+    background-color: var(--white);
+    width: 276px;
+    height: 46px;
+    border-radius: 5px;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.adding-cola-item img, .purchased-cola-item img {
+    margin-left: 10px;
+    width: 18px;
+    height: 33px;
+}
+
+.adding-cola-item p, .purchased-cola-item p {
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 13px;
+    margin-left: 10px;
+}
+
+.count {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    margin-right: 8px;
+    margin-left: auto;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+}
+
+#purchase {
+    border-radius: 5px;
+    height: 106px;
+    background-color: var(--mainColor);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+#budget-amount {
+    width: 306px;
+    height: 32px;
+    background-color: var(--subColor);
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    box-sizing: border-box;
+}
+
+#purchased{
+    display: flex;
+    flex-direction: column;
+}
+
+.purchased-cola {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 13px;
+}
+
+
+
+#purchased-list {
+    width: 306px;
+    height: 364px;
+    overflow-x: auto;
+    border-radius: 5px;
+    background-color: var(--subColor);
+    padding: 12px;
+}
+
+#total-amount {
+    margin-top: auto;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: end;
+}
+
+#total-amount::before{
+    content: "총 금액 : ";
+}
+
+#total-amount::after{
+    content: " 원";
 }
