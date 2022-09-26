@@ -51,7 +51,10 @@
                     </button>
                 </article>
                 <article class="add-to-cart">
-                    <input type="text" id="balance" value="1,000">
+                    <div id="balance">
+                        <span class="label balance-label">잔액 :</span>
+                        <span class="value balance-value">1,000</span>
+                    </div>
                     <input type="button" id="change" value="거스름돈 반환">
                     <input type="text" id="deposit-amount" placeholder="입금액 입력">
                     <input type="button" id="deposit" value="입금">
@@ -63,7 +66,7 @@
                                 <input class="count" type="text" id="adding_original_count" value="1">
                             </li>
                             <li class="adding-cola-item">
-                                <img src="images/cola/green_cola.png" alt="오리지널 콜라">
+                                <img src="images/cola/green_cola.png" alt="그린 콜라">
                                 <p>Green_Cola</p>
                                 <input class="count" type="text" id="adding_green_count" value="2">
                             </li>
@@ -73,7 +76,10 @@
                 </article>
             </section>
             <section id="budget">
-                <input type="text" id="budget-amount" value="25,000">
+                <div id="budget-amount">
+                    <span class="label budget-amount-label">소지금 :</span>
+                    <span class="value budget-amount-value">25,000</span>
+                </div>
             </section>
             <section id="purchased">
                 <h2 class="purchased-cola">획득한 음료</h2>
@@ -85,17 +91,17 @@
                             <input class="count" type="text" id="purchased_original_count" value="1">
                         </li>
                         <li class="purchased-cola-item">
-                            <img src="images/cola/green_cola.png" alt="오리지널 콜라">
+                            <img src="images/cola/green_cola.png" alt="그린 콜라">
                             <p>Green_Cola</p>
                             <input class="count" type="text" id="purchased_green_count" value="2">
                         </li>
                         <li class="purchased-cola-item">
-                            <img src="images/cola/orange_cola.png" alt="오리지널 콜라">
+                            <img src="images/cola/orange_cola.png" alt="오렌지 콜라">
                             <p>Orange_Cola</p>
                             <input class="count" type="text" id="purchased_orange_count" value="1">
                         </li>
                         <li class="purchased-cola-item">
-                            <img src="images/cola/violet_cola.png" alt="오리지널 콜라">
+                            <img src="images/cola/violet_cola.png" alt="바이올렛 콜라">
                             <p>Violet_Cola</p>
                             <input class="count" type="text" id="purchased_violet_count" value="5">
                         </li>
@@ -125,5 +131,18 @@
 
 <!-- 3. overflow: scroll의 스크롤 부분에 배경색을 바꾸는 방법은? -->
 <!-- 
-    ::-webkit-scrollbar이라는 CSS 속성을 사용하기 
+    ::-webkit-scrollbar이라는 CSS 속성을 사용하기
+    기본 참고서 https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar
+    스크롤 속성 이미지로 이해하기 https://css-tricks.com/custom-scrollbars-in-webkit/
+
+-->
+
+<!-- 4. 스크롤 길이가 적용되지 않는 이유?
+    인터넷 브라우저에서 최소 길이를 적용하고 있기 때문에 전체 영역 중 보이는 부분이 적용하고자 하는 길이에 충족하지 않았을 경우 적용이 안 될 수 있다. ::-webkit-scrollbar-thumb에 height: 95%;를 적용하면, 스크롤바 길이가 잘 적용된 것을 확인할 수 있다.
+ -->
+
+<!-- 5. "잔액 : 1,000원"과 같이 input type:text 안의 value들 사이에 space-between 배치로 표현이 가능한가? -->
+<!-- 
+    2시간 넘게 찾아봐도 나와 같은 사례는 없는 것 같다ㅠㅠ
+    -> div span으로 갈아타기
 -->

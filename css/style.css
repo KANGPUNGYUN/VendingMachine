@@ -29,7 +29,7 @@ main {
     grid-gap: 20px 28px;
 }
 
-main #vending {
+section #vending {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
     padding: 31px 27px 28px;
@@ -103,8 +103,9 @@ section #purchased {
 .vending-cola-list-item p {
     font-family: 'Noto Sans KR';
     font-size: 9px;
-    font-weight: 500;
-    line-height: 9px;
+    transform: scale(0.9);
+    font-weight: 400;
+    line-height: 13px;
     letter-spacing: 0em;
     margin-top: 6px;
 }
@@ -133,7 +134,7 @@ section #purchased {
     grid-gap: 11px 12px;
 }
 
-#balance, #change, #deposit-amount, #deposit, .adding-cola-list, #purchase, #add-to-cart-list, #purchased-list{
+#balance, #change, #deposit-amount, #deposit, #purchase, #add-to-cart-list, #purchased-list{
     box-sizing: border-box;
 }
 
@@ -146,6 +147,28 @@ section #purchased {
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
+}
+
+.label{
+    float: left;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.value{
+    float: right;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.budget-amount-value{
+    font-weight: 700;
+}
+
+.value::after{
+    content: " 원";
 }
 
 #change {
@@ -190,11 +213,13 @@ section #purchased {
     border-radius: 5px;
     background-color: var(--subColor);
     padding: 12px;
+    outline: 1px solid var(--grey);
 }
+
 /* scrollbar CSS */
 /* width */
 #add-to-cart-list::-webkit-scrollbar, #purchased-list::-webkit-scrollbar {
-    width: 4px;
+    width: 12px;
 }
 
 /* Track */
@@ -204,12 +229,12 @@ section #purchased {
 
 /* Handle */
 #add-to-cart-list::-webkit-scrollbar-thumb, #purchased-list::-webkit-scrollbar-thumb{
-    
     background: white;
+    background-clip: padding-box;
+    padding: 0 4px;
     border: 4px solid transparent;
     border-radius: 50px;
-    background-clip: padding-box;
-
+    height: 95%;
 }
 
 .adding-cola-list, .purchased-cola-list{
@@ -247,6 +272,7 @@ section #purchased {
 .adding-cola-item p, .purchased-cola-item p {
     font-weight: 500;
     font-size: 9px;
+    transform: scale(0.9);
     line-height: 13px;
     margin-left: 10px;
 }
@@ -286,19 +312,12 @@ section #purchased {
     box-sizing: border-box;
 }
 
-#purchased{
-    display: flex;
-    flex-direction: column;
-}
-
 .purchased-cola {
     font-weight: 700;
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 13px;
 }
-
-
 
 #purchased-list {
     width: 306px;
@@ -307,10 +326,12 @@ section #purchased {
     border-radius: 5px;
     background-color: var(--subColor);
     padding: 12px;
+    outline: 1px solid var(--grey);
 }
 
 #total-amount {
-    margin-top: auto;
+    display: block;
+    margin-top: 6px;
     font-weight: 500;
     font-size: 12px;
     line-height: 17px;
@@ -323,4 +344,48 @@ section #purchased {
 
 #total-amount::after{
     content: " 원";
+}
+
+@media screen and (max-width:748px){
+
+    body {
+        background-color: var(--white);
+    }
+    
+    .wrapper{
+        width: 100%;
+    }
+
+    header {
+        min-width: 360px;
+        height: 78px;
+    }
+
+    main {
+        display: block;
+        margin: 0;
+    }
+
+    .logo{
+        width: 166px;
+        height: 78px;
+    }
+    
+    section #vending,
+    section #budget,
+    section #purchased{
+        margin: 0 auto;
+    }
+
+    section #vending {
+        padding: 18px 27px;
+    }
+
+    section #budget {
+        padding: 2px 27px;
+    }
+
+    section #purchased{
+        padding: 39px 27px 43px;
+    }
 }
