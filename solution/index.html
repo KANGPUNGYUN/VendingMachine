@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColaCola</title>
+    <link rel="stylesheet" href="src/style/reset.css">
+    <link rel="stylesheet" href="src/style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <article id="app">
+        <h1 class="tit-app">
+            <img src="src/images/Logo_img.png" alt="ColaCola" class="img-item">
+        </h1>
+        <section class="vending-machine">
+            <h2 class="ir">자판기 화면</h2>
+            <ul class="list-item">
+            </ul>
+
+            <section class="cont-buy">
+                <h3 class="ir">구입 관련 정보</h3>
+                <div class="info-balance">
+                    잔액 :
+                    <span class="txt-balance">원</span>
+                </div>
+                <button type="button" class="btn-return">거스름돈 반환</button>
+                <label for="inpPut" class="ir">입금할 금액을 입력합니다.</label>
+                <input type="number" id="inpPut" class="inp-put" placeholder="입금액 입력">
+                <button type="button" class="btn-put">입금</button>
+
+                <ul class="list-item-staged">
+                    <li>
+                        <button type="button" class="btn-staged" data-item="Cool Cola">
+                            <img src="src/images/Cool_Cola.png" alt="" class="img-item">
+                            <strong class="txt-item">Cool_Cola</strong>
+                            <span class="num-counter">1</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-staged" data-item="Cool Cola">
+                            <img src="src/images/Cool_Cola.png" alt="" class="img-item">
+                            <strong class="txt-item">Cool_Cola</strong>
+                            <span class="num-counter">1</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-staged" data-item="Cool Cola">
+                            <img src="src/images/Cool_Cola.png" alt="" class="img-item">
+                            <strong class="txt-item">Cool_Cola</strong>
+                            <span class="num-counter">1</span>
+                        </button>
+                    </li>
+                </ul>
+                <button type="button" class="btn-get">획득</button>
+            </section>
+        </section>
+        <section class="my-info">
+            <h2 class="ir">나의 정보</h2>
+            <div class="cont-mymoney">
+                <div class="info-mymoney">
+                    소지금 :
+                    <span class="txt-mymoney">30,000원</span>
+                </div>
+            </div>
+
+            <div class="cont-myitems">
+                <strong class="tit-myitem">획득한 음료</strong>
+                <ul class="list-item-staged">
+                    <li>
+                        <img src="src/images/Cool_Cola.png" alt="" class="img-item">
+                        <strong class="txt-item">Cool_Cola</strong>
+                        <span class="num-counter">1</span>
+                    </li>
+                    <li>
+                        <img src="src/images/Cool_Cola.png" alt="" class="img-item">
+                        <strong class="txt-item">Cool_Cola</strong>
+                        <span class="num-counter">1</span>
+                    </li>
+                    <li>
+                        <img src="src/images/Cool_Cola.png" alt="" class="img-item">
+                        <strong class="txt-item">Cool_Cola</strong>
+                        <span class="num-counter">1</span>
+                    </li>
+                    <li>
+                        <img src="src/images/Cool_Cola.png" alt="" class="img-item">
+                        <strong class="txt-item">Cool_Cola</strong>
+                        <span class="num-counter">1</span>
+                    </li>
+                    <li>
+                        <img src="src/images/Cool_Cola.png" alt="" class="img-item">
+                        <strong class="txt-item">Cool_Cola</strong>
+                        <span class="num-counter">1</span>
+                    </li>
+                    <li>
+                        <img src="src/images/Cool_Cola.png" alt="" class="img-item">
+                        <strong class="txt-item">Cool_Cola</strong>
+                        <span class="num-counter">1</span>
+                    </li>
+                    <li>
+                        <img src="src/images/Cool_Cola.png" alt="" class="img-item">
+                        <strong class="txt-item">Cool_Cola</strong>
+                        <span class="num-counter">1</span>
+                    </li>
+
+                </ul>
+                <strong class="txt-total">총금액 : 0원</strong>
+            </div>
+        </section>
+    </article>
+    <script type="module" src="src/js/index.js"></script>
+</body>
+
+</html>
