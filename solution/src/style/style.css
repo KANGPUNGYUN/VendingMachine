@@ -141,6 +141,11 @@ body {
     font-size: 13px;
 }
 
+.cont-buy .btn-get {
+    background-color:#6327FE;
+    color: #ffffff;
+}
+
 .cont-buy .info-balance {
     padding: 6px 10px;
     background-color: #EAE8FE;

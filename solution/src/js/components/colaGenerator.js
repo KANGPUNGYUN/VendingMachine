@@ -3,8 +3,15 @@ class ColaGenerator {
         this.itemList = document.querySelector('.list-item');
     }
 
-    setup() {
-        this.loadData((json) => {
+    // setup() {
+    //     this.loadData((json) => {
+    //         this.colaFactory(json);
+    //     });
+    // }
+    
+    //top level async // await는 반드시 async 함수안에서만 작동합니다.
+    async setup() {
+        await this.loadData((json) => {
             this.colaFactory(json);
         });
     }
